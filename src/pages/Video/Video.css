@@ -1,0 +1,120 @@
+.play-container{
+    padding: 20px 2%;
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 1200px) {
+    .play-container {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+    
+    /* Video player section */
+    .play-container > :first-child {
+        flex: 1 1 65%; /* Grow | Shrink | Basis */
+        min-width: 60%;
+    }
+    
+    /* Recommendations section */
+    .play-container > :last-child {
+        flex: 1 1 30%;
+        min-width: 300px;
+    }
+}
+
+@media (max-width: 992px) {
+    .play-container {
+        padding: 15px 2%;
+        gap: 1.2rem;
+    }
+    
+    .play-container > :first-child {
+        flex-basis: 60%;
+    }
+    
+    .play-container > :last-child {
+        flex-basis: 38%;
+        min-width: 280px;
+    }
+}
+.play-container > :first-child { /* PlayVideo */
+    flex: 1 1 70%; /* Grow | Shrink | Basis */
+    min-width: 600px; /* Minimum width before wrapping */
+}
+
+.play-container > :last-child { /* Recommended */
+    flex: 1 1 25%;
+    min-width: 300px;
+}
+
+/* Medium screens */
+@media (max-width: 1024px) {
+    .play-container > :first-child {
+        min-width: 500px;
+    }
+    
+    .play-container > :last-child {
+        min-width: 250px;
+    }
+}
+
+/* Tablet layout */
+@media (max-width: 768px) {
+    .play-container {
+        flex-direction: column;
+    }
+    
+    .play-container > :first-child,
+    .play-container > :last-child {
+        flex: 1 1 100%;
+        min-width: 100%;
+        max-width: 100%;
+    }
+    
+    .play-container > :last-child {
+        order: 2; /* Ensure it stays below */
+    }
+}
+
+/* Mobile layout */
+@media (max-width: 480px) {
+    .play-container {
+        padding: 10px 3%;
+        gap: 1rem;
+    }
+    
+    .play-container > :first-child {
+        min-width: unset;
+    }
+}
+
+/* Mobile Landscape Optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+    .play-container {
+        flex-direction: row;
+    }
+    
+    .play-container > :first-child {
+        flex-basis: 55%;
+    }
+    
+    .play-container > :last-child {
+        flex-basis: 40%;
+    }
+}
+
+/* 4K Screens and Above */
+@media (min-width: 2560px) {
+    .play-container {
+        max-width: 2000px;
+        margin: 0 auto;
+    }
+}
+
+/* Optional: Add smooth transitions */
+.play-container > * {
+    transition: all 0.3s ease-in-out;
+}

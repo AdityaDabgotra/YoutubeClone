@@ -1,0 +1,136 @@
+.sidebar{
+    width: 15%;
+    height: 87%;
+    z-index: 0;
+    position: fixed;
+    top: 0;
+    padding-left: 2%;
+    margin-top: 80px;
+    overflow-y: scroll;
+    transition: all 0.3s ease;
+}
+.sortcut-links i{
+    width: 20px;
+    margin-right: 20px;
+}
+.side-links{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: fit-content;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+.sidebar hr{
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    width: 85%;
+}
+.subscribed-list{
+    margin-bottom: 20px;
+}
+.subscribed-list h3{
+    font-size: 13px;
+    margin: 20px 0;
+}
+.subscribed-list img{
+    width: 25px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.small-sidebar{
+    width: 5%;
+}
+.small-sidebar p{
+    display: none;
+}
+.small-sidebar h3{
+    display: none;
+}
+.small-sidebar hr{
+    width: 50%;
+    margin-bottom: 25px;
+}
+.side-links.active i{
+    padding-bottom: 2px;
+    border-bottom: 3px solid red;
+}
+
+@media (max-width: 1200px) {
+    .sidebar {
+        width: 20%;
+    }
+    .sortcut-links i {
+        margin-right: 15px;
+    }
+    .subscribed-list img {
+        width: 22px;
+        margin-right: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .sidebar {
+        width: 25%;
+        padding-left: 1%;
+    }
+    .side-links {
+        margin-bottom: 15px;
+    }
+    .subscribed-list h3 {
+        font-size: 12px;
+        margin: 15px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 72px;
+        padding: 0;
+        margin-top: 66px; /* Adjusted for mobile nav height */
+    }
+    .sidebar hr {
+        width: 60%;
+        margin: 15px auto;
+    }
+    .side-links {
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 12px;
+        padding: 8px 0;
+        text-align: center;
+    }
+    .sortcut-links i {
+        margin-right: 0;
+        margin-bottom: 4px;
+        font-size: 18px;
+    }
+    .side-links span {
+        font-size: 10px;
+        line-height: 1.2;
+    }
+    .subscribed-list {
+        display: none; /* Hide subscriptions on mobile */
+    }
+    .side-links.active i {
+        border-bottom-width: 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        display: none;
+    }
+}
+
+/* Touch optimization */
+@media (hover: none) and (pointer: coarse) {
+    .side-links {
+        padding: 12px 0;
+    }
+    .sortcut-links i {
+        width: 24px;
+        height: 24px;
+    }
+}

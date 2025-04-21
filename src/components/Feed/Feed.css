@@ -1,0 +1,144 @@
+.feed{
+    z-index: 0;
+    width: 80%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    height: 80vh;
+    position: fixed;
+    top: 0;
+    margin-top: 80px;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-row-gap: 30px;
+    grid-column-gap:16px;
+    padding: 16px;
+    scroll-snap-type: y proximity;
+    overscroll-behavior: contain;
+}
+.card{
+    scroll-snap-align: start; 
+    min-height: 300px; 
+    break-inside: avoid;
+}
+.card img{
+    width: 100%;
+    border-radius: 5px;
+}
+.card h2{
+    font-size: 16px;
+    font-weight: 600;
+    color: #ccc;
+    margin: 5px 0;
+}
+.card h3{
+    font-size: 14px;
+    font-weight: 600;
+    color: #cccc;
+    margin: 6px 0;
+}
+.card p{
+    font-size: 14px;
+    color: #ccc;
+}
+@media (max-width: 1200px) {
+    .feed {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-column-gap: 12px;
+        grid-row-gap: 24px;
+    }
+    
+    .card h2 {
+        font-size: 15px;
+    }
+    
+    .card h3 {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 992px) {
+    .feed {
+        width: 85%;
+        margin-right: 15px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .card p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .feed {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 66px; /* Adjusted for mobile header */
+        height: calc(100vh - 66px);
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        grid-row-gap: 20px;
+        padding: 12px;
+    }
+    
+    .card h2 {
+        font-size: 14px;
+        margin: 4px 0;
+    }
+    
+    .card h3 {
+        font-size: 12px;
+        margin: 4px 0;
+    }
+    
+    .card p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .feed {
+        margin: 0 auto;
+        grid-template-columns: 1fr;
+        grid-row-gap: 16px;
+        padding: 8px;
+    }
+    
+    .card {
+        margin-bottom: 8px;
+    }
+    
+    .card img {
+        border-radius: 4px;
+    }
+    
+    .card h2 {
+        font-size: 13px;
+    }
+    
+    .card h3 {
+        font-size: 11px;
+    }
+    
+    .card p {
+        font-size: 11px;
+    }
+}
+
+/* Orientation adjustments */
+@media (orientation: landscape) and (max-width: 768px) {
+    .feed {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .card {
+        padding: 8px;
+        margin: -8px;
+    }
+    
+    .card img {
+        margin-bottom: 4px;
+    }
+}
